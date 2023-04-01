@@ -197,6 +197,16 @@ void message(std::string text) {
 primitive.loadFunction(message, "message");
 ```
 
+## Assigning a currency to a variable
+```c++
+primitive.addVar("name", "text"); //the text will be translated to the variable type
+```
+
+## Getting the currency of a variable
+```c++
+primitive.getVar("name");
+```
+
 ## Using Scripts
 
 ```c++
