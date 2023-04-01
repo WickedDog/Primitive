@@ -1,20 +1,14 @@
-movint number 0
-movint completenumber 10000
+movint index 0
+movint c 1000 
 
-callcpp print number
-
-
-mark exit
-callcpp message number ; custom function
+mark exit ; since logical operators can only call marks, we create a separate mark where there will be an exit from the loop
+callcpp message index ; we call an external function from c++ called message and output the currency of the variable index
 break
 end
 
-mark doit
-addint number 1 ; +=
-callcpp message number
-ifebint number completenumber exit ; >=
+mark cycle ; 
+addint index 1
+ifeint index c exit ; if index is equal to c, then we will call the mark "exit"
 end
 
-callcpp message number
-
-repeat doit
+repeat cycle ; repeat the mark "cycle"
