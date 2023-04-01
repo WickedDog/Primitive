@@ -1,0 +1,20 @@
+movint number 0
+movint completenumber 10000
+
+callcpp print number
+
+
+mark exit
+callcpp message number ; custom function
+break
+end
+
+mark doit
+addint number 1 ; +=
+callcpp message number
+ifebint number completenumber exit ; >=
+end
+
+callcpp message number
+
+repeat doit
