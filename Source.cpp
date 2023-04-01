@@ -67,126 +67,126 @@ public:
 
 	//***INT***
 	
-	//Сетать валюту/создать переменную int 
+	//Г‘ГҐГІГ ГІГј ГўГ Г«ГѕГІГі/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ int 
 	prFunction(movint) {
 		m_vars[v1] = convert(v2, std::atoi, std::to_string);
 	}
 	
-	//Сетать существующую переменную/создать переменную int 
+	//Г‘ГҐГІГ ГІГј Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ int 
 	prFunction(movints) {
 		m_vars[v1] = convert(m_vars[v2], std::atoi, std::to_string);
 	}
 
-	//Прибавлять валюту int 
+	//ГЏГ°ГЁГЎГ ГўГ«ГїГІГј ГўГ Г«ГѕГІГі int 
 	prFunction(addint) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) + convert(v2, std::atoi));
 	}
 
-	//Прибавить на существующую валюту int 
+	//ГЏГ°ГЁГЎГ ГўГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі int 
 	prFunction(addints) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) + convert(m_vars[v2], std::atoi));
 	}
 
-	//Убавлять валюту int 
+	//Г“ГЎГ ГўГ«ГїГІГј ГўГ Г«ГѕГІГі int 
 	prFunction(subint) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) - convert(v2, std::atoi));
 	}
 
-	//Убавить на существующую валюту int 
+	//Г“ГЎГ ГўГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі int 
 	prFunction(subints) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) - convert(m_vars[v2], std::atoi));
 	}
 
-	//Умножить валюту int 
+	//Г“Г¬Г­Г®Г¦ГЁГІГј ГўГ Г«ГѕГІГі int 
 	prFunction(mulint) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) * convert(v2, std::atoi));
 	}
 
-	//Умножить на существующую валюту int 
+	//Г“Г¬Г­Г®Г¦ГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі int 
 	prFunction(mulints) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) * convert(m_vars[v2], std::atoi));
 	}
 
-	//Делить валюту int 
+	//Г„ГҐГ«ГЁГІГј ГўГ Г«ГѕГІГі int 
 	prFunction(divint) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) / convert(v2, std::atoi));
 	}
 
-	//Делить на существующую валюту int 
+	//Г„ГҐГ«ГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі int 
 	prFunction(divints) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atoi) / convert(m_vars[v2], std::atoi));
 	}
 
 	//***FLOAT***
 
-	//Сетать валюту/создать переменную float 
+	//Г‘ГҐГІГ ГІГј ГўГ Г«ГѕГІГі/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ float 
 	prFunction(movfloat) {
 		m_vars[v1] = convert(v2, std::atof, std::to_string);
 	}
 
-	//Сетать существующую переменную/создать переменную float 
+	//Г‘ГҐГІГ ГІГј Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ float 
 	prFunction(movfloats) {
 		m_vars[v1] = convert(m_vars[v2], std::atof, std::to_string);
 	}
 
-	//Прибавлять валюту float 
+	//ГЏГ°ГЁГЎГ ГўГ«ГїГІГј ГўГ Г«ГѕГІГі float 
 	prFunction(addfloat) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) + convert(v2, std::atof));
 	}
 
-	//Прибавить на существующую валюту float 
+	//ГЏГ°ГЁГЎГ ГўГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі float 
 	prFunction(addfloats) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) + convert(m_vars[v2], std::atof));
 	}
 
-	//Убавлять валюту float 
+	//Г“ГЎГ ГўГ«ГїГІГј ГўГ Г«ГѕГІГі float 
 	prFunction(subfloat) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) - convert(v2, std::atof));
 	}
 
-	//Убавить на существующую валюту float 
+	//Г“ГЎГ ГўГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі float 
 	prFunction(subfloats) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) - convert(m_vars[v2], std::atof));
 	}
 
-	//Умножить валюту float 
+	//Г“Г¬Г­Г®Г¦ГЁГІГј ГўГ Г«ГѕГІГі float 
 	prFunction(mulfloat) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) * convert(v2, std::atof));
 	}
 
-	//Умножить на существующую валюту float 
+	//Г“Г¬Г­Г®Г¦ГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі float 
 	prFunction(mulfloats) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) * convert(m_vars[v2], std::atof));
 	}
 
-	//Делить валюту float 
+	//Г„ГҐГ«ГЁГІГј ГўГ Г«ГѕГІГі float 
 	prFunction(divfloat) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) / convert(v2, std::atof));
 	}
 
-	//Делить на существующую валюту float 
+	//Г„ГҐГ«ГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі float 
 	prFunction(divfloats) {
 		m_vars[v1] = std::to_string(convert(m_vars[v1], std::atof) / convert(m_vars[v2], std::atof));
 	}
 
 	//***STRING***
 
-	//Сетать валюту/создать переменную string 
+	//Г‘ГҐГІГ ГІГј ГўГ Г«ГѕГІГі/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ string 
 	prFunction(movstring) {
 		m_vars[v1] = v2;
 	}
 
-	//Сетать существующую переменную/создать переменную string 
+	//Г‘ГҐГІГ ГІГј Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ/Г±Г®Г§Г¤Г ГІГј ГЇГҐГ°ГҐГ¬ГҐГ­Г­ГіГѕ string 
 	prFunction(movstrings) {
 		m_vars[v1] = m_vars[v2];
 	}
 
-	//Прибавлять валюту string 
+	//ГЏГ°ГЁГЎГ ГўГ«ГїГІГј ГўГ Г«ГѕГІГі string 
 	prFunction(addstring) {
 		m_vars[v1] = m_vars[v1] + v2;
 	}
 
-	//Прибавить на существующую валюту string 
+	//ГЏГ°ГЁГЎГ ГўГЁГІГј Г­Г  Г±ГіГ№ГҐГ±ГІГўГіГѕГ№ГіГѕ ГўГ Г«ГѕГІГі string 
 	prFunction(addstrings) {
 		m_vars[v1] = m_vars[v1] + m_vars[v2];
 	}
@@ -195,12 +195,12 @@ public:
 	//****MARK****
 	//************
 
-	//Начало метки
+	//ГЌГ Г·Г Г«Г® Г¬ГҐГІГЄГЁ
 	prFunction(mark) {
 		m_curMark = v1;
 	}
 
-	//Конец метки
+	//ГЉГ®Г­ГҐГ¶ Г¬ГҐГІГЄГЁ
 	prFunction(end) {
 		m_curMark = "";
 	}
@@ -427,7 +427,7 @@ public:
 
 	//***CALL***
 
-	//вызов внешних функций
+	//ГўГ»Г§Г®Гў ГўГ­ГҐГёГ­ГЁГµ ГґГіГ­ГЄГ¶ГЁГ©
 	prFunction(callcpp) {
 		static auto findFunc = [](std::map<std::string, prCpp> prMap, std::string name) -> bool {
 			for (auto &fMap : prMap)
@@ -444,14 +444,14 @@ public:
 			m_cppfunctions[v1](m_vars[v2]);
 	}
 
-	//удаление переменных
+	//ГіГ¤Г Г«ГҐГ­ГЁГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»Гµ
 	prFunction(release) {
 		m_vars[v1].clear();
 	}
 
 	//***WHILE***
 
-	//цикл
+	//Г¶ГЁГЄГ«
 	prFunction(repeat) {
 		while (!lastStop) {
 			for (size_t i = 0; i < m_functions[v1].size(); i++)
@@ -463,7 +463,7 @@ public:
 		lastStop = false;
 	}
 
-	//Остановка цикла
+	//ГЋГ±ГІГ Г­Г®ГўГЄГ  Г¶ГЁГЄГ«Г 
 	prFunction(bbreak) {
 		lastStop = true;
 	}
@@ -510,7 +510,7 @@ public:
 
 		auto _split = split(script);
 
-		//ох... это будет долго
+		//Г®Гµ... ГЅГІГ® ГЎГіГ¤ГҐГІ Г¤Г®Г«ГЈГ®
 		std::string tEvent = _split[0];
 		prFuncArg setArg;
 		if (tEvent == "movint") {
@@ -855,62 +855,3 @@ public:
 		}
 	}
 };
-
-#include <fstream>
-
-std::vector<std::string> getFromFile(std::string path) {
-	std::ifstream fs(path);
-	if (fs.fail()) return {};
-	std::string curline;
-	std::vector<std::string> tmpVec;
-	while (std::getline(fs, curline))
-	{
-		tmpVec.push_back(curline);
-	}
-
-	fs.close();
-	return tmpVec;
-}
-
-PrimitiveFunctions pr;
-
-
-void message(std::string text) {
-	std::cout << text << "\n";
-}
-
-void tesst(std::string text) {
-	std::cout << text << "\n";
-}
-void input_t(std::string text) {
-	std::string ja;
-	std::cin >> ja;
-	pr.addVar("input text", ja);
-}
-
-int main() {
-	//test myTest;
-	//myTest.callFunction("test");
-
-	//pr.movint("year", "2023");
-	//pr.movint("age", "17");
-	//pr.movints("yag", "year");
-	//pr.subints("yag", "age");
-	//pr.callcpp("message", "yag");
-
-	pr.loadFunction(input_t, "input");
-	pr.loadFunction(message, "message");
-
-	auto spl = getFromFile("datest.prm");
-
-	for (size_t i = 0; i < spl.size(); i++)
-	{
-		pr.loadLine(spl[i]);
-	}
-
-	pr.useScript();
-
-	pr.Release();
-	getchar();
-	//pr.printAllVars();
-}
