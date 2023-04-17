@@ -1,0 +1,8 @@
+Before:
+
+movstring message_text "Hello World!"
+callcpp message message_text
+
+After:
+
+callcpp message "Hello World!"
