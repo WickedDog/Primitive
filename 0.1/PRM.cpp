@@ -31,11 +31,45 @@ private:
 	std::map<std::string, prCpp> m_cppfunctions;
 
 	std::map<std::string, std::string> m_vars;
+	std::string m_curWeek;
 
 	bool lastOperation;
 	bool lastStop;
 
 	std::string m_curMark;
+	std::string m_curpath;
+
+	std::string getLastPath(std::string path) {
+		std::string path_last;
+		std::string all_path;
+		for (size_t i = 0; i < path.size(); i++)
+		{
+			if (path[i] == '/' or path[i] == '\\') {
+				all_path += path_last + "/";
+				path_last.clear();
+			}
+			else {
+				path_last += path[i];
+			}
+		}
+
+		return all_path;
+	}
+
+	std::vector<std::string> getFromFile(std::string path) {
+		std::ifstream fs(path);
+		if (fs.fail()) return {};
+		std::string curline;
+		std::vector<std::string> tmpVec;
+		while (std::getline(fs, curline))
+		{
+			tmpVec.push_back(curline);
+		}
+
+		fs.close();
+		return tmpVec;
+	}
+
 public:
 	PrimitiveFunctions() {
 		m_curMark = "";
@@ -52,6 +86,15 @@ public:
 
 		m_cppfunctions.clear();
 		m_vars.clear();
+	}
+
+	void LoadFile(std::string path) {
+		auto allText = getFromFile(path);
+		m_curpath = getLastPath(path);
+		for (size_t i = 0; i < allText.size(); i++)
+		{
+			this->loadLine(allText[i]);
+		}
 	}
 
 	void addVar(std::string name, std::string v) {
@@ -471,24 +514,20 @@ public:
 
 	//***PASTE***
 	prFunction(paste) {
-		std::ifstream fs(v1);
-		if (fs.fail())
-			return;
-
-		std::string cLine;
-		std::vector<std::string> cLines;
-		while (getline(fs, cLine))
-		{
-			cLines.push_back(cLine);
+		std::ifstream ifstr;
+		ifstr.open(v1);
+		if (ifstr.fail()) {
+			ifstr.open(m_curpath + v1);
+			if (!ifstr.fail()) {
+				this->LoadFile(m_curpath + v1);
+			}
+		}
+		else {
+			this->LoadFile(v1);
 		}
 
-		for (size_t i = 0; i < cLines.size(); i++)
-		{
-			this->loadLine(cLines[i]);
-		}
+		ifstr.clear();
 
-		cLines.clear();
-		fs.close();
 	}
 
 	//***PARSE***
@@ -885,22 +924,6 @@ public:
 	}
 };
 
-#include <fstream>
-
-std::vector<std::string> getFromFile(std::string path) {
-	std::ifstream fs(path);
-	if (fs.fail()) return {};
-	std::string curline;
-	std::vector<std::string> tmpVec;
-	while (std::getline(fs, curline))
-	{
-		tmpVec.push_back(curline);
-	}
-
-	fs.close();
-	return tmpVec;
-}
-
 PrimitiveFunctions pr;
 
 
@@ -917,6 +940,7 @@ void input_t(std::string text) {
 	pr.addVar("input text", ja);
 }
 
+
 int main() {
 	//test myTest;
 	//myTest.callFunction("test");
@@ -930,12 +954,7 @@ int main() {
 	pr.loadFunction(input_t, "input");
 	pr.loadFunction(message, "message");
 
-	auto spl = getFromFile("datest.prm");
-
-	for (size_t i = 0; i < spl.size(); i++)
-	{
-		pr.loadLine(spl[i]);
-	}
+	pr.LoadFile("datest.prm");
 
 	pr.useScript();
 
