@@ -2,6 +2,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <fstream>
 #include <Windows.h>
 
 #define prFunction(name) void name(std::string v1 = "", std::string v2= "", std::string v3= "")
@@ -468,6 +469,28 @@ public:
 		lastStop = true;
 	}
 
+	//***PASTE***
+	prFunction(paste) {
+		std::ifstream fs(v1);
+		if (fs.fail())
+			return;
+
+		std::string cLine;
+		std::vector<std::string> cLines;
+		while (getline(fs, cLine))
+		{
+			cLines.push_back(cLine);
+		}
+
+		for (size_t i = 0; i < cLines.size(); i++)
+		{
+			this->loadLine(cLines[i]);
+		}
+
+		cLines.clear();
+		fs.close();
+	}
+
 	//***PARSE***
 	void loadLine(std::string script) {
 		static auto split = [](std::string script) -> std::vector<std::string> {
@@ -824,6 +847,13 @@ public:
 
 		else if (tEvent == "break") {
 			setArg.m_func = &PrimitiveFunctions::bbreak;
+			setArg.v1 = _split[1];
+			setArg.v2 = _split[2];
+			setArg.v3 = _split[3];
+			m_functions[m_curMark].push_back(setArg);
+		}
+		else if (tEvent == "paste") {
+			setArg.m_func = &PrimitiveFunctions::paste;
 			setArg.v1 = _split[1];
 			setArg.v2 = _split[2];
 			setArg.v3 = _split[3];
